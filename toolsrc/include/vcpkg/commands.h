@@ -13,10 +13,6 @@
 
 namespace vcpkg::Commands
 {
-    using CommandTypeA = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
-    using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
-
     template<class T>
     struct PackageNameAndFunction
     {
