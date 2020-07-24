@@ -2,6 +2,7 @@
 
 #include <vcpkg/build.h>
 #include <vcpkg/commands.buildexternal.h>
+#include <vcpkg/commands.ci.h>
 #include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
 #include <vcpkg/dependencies.h>
@@ -24,18 +25,6 @@ namespace vcpkg::Commands
         No,
         Yes,
     };
-
-    namespace CI
-    {
-        struct CICommand : TripletCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args,
-                                  const VcpkgPaths& paths,
-                                  Triplet default_triplet) const override;
-        };
-        extern const CommandStructure COMMAND_STRUCTURE;
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
-    }
 
     namespace CIClean
     {
