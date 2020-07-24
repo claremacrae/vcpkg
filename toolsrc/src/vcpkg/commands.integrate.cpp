@@ -529,6 +529,11 @@ With a project open, go to Tools->NuGet Package Manager->Package Manager Console
         &valid_arguments,
     };
 
+    void IntegrateCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Integrate::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
