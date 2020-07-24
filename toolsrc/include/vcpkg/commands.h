@@ -3,6 +3,7 @@
 #include <vcpkg/build.h>
 #include <vcpkg/commands.buildexternal.h>
 #include <vcpkg/commands.ci.h>
+#include <vcpkg/commands.ciclean.h>
 #include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
 #include <vcpkg/dependencies.h>
@@ -25,15 +26,6 @@ namespace vcpkg::Commands
         No,
         Yes,
     };
-
-    namespace CIClean
-    {
-        struct CICleanCommand : PathsCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
-        };
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    }
 
     namespace Env
     {
