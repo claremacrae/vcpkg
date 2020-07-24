@@ -23,4 +23,11 @@ namespace vcpkg::Remove
 
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     void remove_package(const VcpkgPaths& paths, const PackageSpec& spec, StatusParagraphs* status_db);
+
+    struct RemoveCommand : Commands::TripletCommand
+    {
+        void perform_and_exit(const VcpkgCmdArguments& args,
+                              const VcpkgPaths& paths,
+                              Triplet default_triplet) const override;
+    };
 }

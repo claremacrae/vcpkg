@@ -25,6 +25,7 @@
 #include <vcpkg/export.h>
 #include <vcpkg/help.h>
 #include <vcpkg/install.h>
+#include <vcpkg/remove.h>
 #include <vcpkg/update.h>
 
 // Temporary test to speed up refactoring.
@@ -55,6 +56,7 @@ TEMPLATE_TEST_CASE("check command structs are constructable",
                    vcpkg::Commands::FormatManifest::FormatManifestCommand,
                    vcpkg::Export::ExportCommand,
                    vcpkg::Install::InstallCommand,
+                   vcpkg::Remove::RemoveCommand,
                    vcpkg::Update::UpdateCommand,
                    vcpkg::Help::HelpCommand)
 {
