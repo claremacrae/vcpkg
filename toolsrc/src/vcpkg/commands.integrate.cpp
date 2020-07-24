@@ -8,6 +8,7 @@
 #include <vcpkg/base/util.h>
 
 #include <vcpkg/commands.h>
+#include <vcpkg/commands.integrate.h>
 #include <vcpkg/metrics.h>
 #include <vcpkg/userconfig.h>
 

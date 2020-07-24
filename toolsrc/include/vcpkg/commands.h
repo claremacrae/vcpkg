@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vcpkg/build.h>
+#include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
 #include <vcpkg/dependencies.h>
 #include <vcpkg/statusparagraphs.h>
@@ -152,19 +153,6 @@ namespace vcpkg::Commands
         };
 
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    }
-
-    namespace Integrate
-    {
-        struct IntegrateCommand : PathsCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
-        };
-        extern const CommandStructure COMMAND_STRUCTURE;
-
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-        void append_helpstring(HelpTableFormatter& table);
-        std::string get_helpstring();
     }
 
     namespace PortsDiff
