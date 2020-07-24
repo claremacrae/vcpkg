@@ -16,7 +16,7 @@ TEST_CASE ("get_available_commands", "[commands_get_available_commands]")
 
     {
         const auto& span = Commands::get_available_commands_type_a();
-        using ContainerType = std::vector<Commands::PackageNameAndFunction<Commands::CommandTypeA>>;
+        using ContainerType = std::vector<Commands::PackageNameAndFunction<std::shared_ptr<Commands::TripletCommand>>>;
         const ContainerType commands(span.begin(), span.end());
 
         CHECK(find_command(commands, "install") != nullptr);

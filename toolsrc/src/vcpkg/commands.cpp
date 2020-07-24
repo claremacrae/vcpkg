@@ -35,19 +35,19 @@
 
 namespace vcpkg::Commands
 {
-    Span<const PackageNameAndFunction<CommandTypeA>> get_available_commands_type_a()
+    Span<const PackageNameAndFunction<std::shared_ptr<TripletCommand>>> get_available_commands_type_a()
     {
-        static std::vector<PackageNameAndFunction<CommandTypeA>> t = {
-            {"install", &Install::perform_and_exit},
-            {"x-set-installed", &SetInstalled::perform_and_exit},
-            {"ci", &CI::perform_and_exit},
-            {"remove", &Remove::perform_and_exit},
-            {"upgrade", &Upgrade::perform_and_exit},
-            {"build", &Build::Command::perform_and_exit},
-            {"env", &Env::perform_and_exit},
-            {"build-external", &BuildExternal::perform_and_exit},
-            {"export", &Export::perform_and_exit},
-            {"depend-info", &DependInfo::perform_and_exit},
+        static std::vector<PackageNameAndFunction<std::shared_ptr<TripletCommand>>> t = {
+            {"install", std::make_shared<Install::InstallCommand>()},
+            {"x-set-installed", std::make_shared<SetInstalled::SetInstalledCommand>()},
+            {"ci", std::make_shared<CI::CICommand>()},
+            {"remove", std::make_shared<Remove::RemoveCommand>()},
+            {"upgrade", std::make_shared<Upgrade::UpgradeCommand>()},
+            {"build", std::make_shared<Build::Command::BuildCommand>()},
+            {"env", std::make_shared<Env::EnvCommand>()},
+            {"build-external", std::make_shared<BuildExternal::BuildExternalCommand>()},
+            {"export", std::make_shared<Export::ExportCommand>()},
+            {"depend-info", std::make_shared<DependInfo::DependInfoCommand>()},
         };
         return t;
     }
