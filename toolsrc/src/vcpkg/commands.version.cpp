@@ -82,7 +82,7 @@ namespace vcpkg::Commands::Version
         nullptr,
     };
 
-    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
+    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem&) const
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
 
