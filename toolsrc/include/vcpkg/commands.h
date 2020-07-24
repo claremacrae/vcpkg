@@ -25,6 +25,10 @@ namespace vcpkg::Commands
     {
     };
 
+    struct PathsCommand : Command
+    {
+    };
+
     enum class DryRun : bool
     {
         No,
