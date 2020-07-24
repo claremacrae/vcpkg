@@ -1,6 +1,7 @@
 #include <catch2/catch.hpp>
 
 #include <vcpkg/commands.h>
+#include <vcpkg/userconfig.h>
 
 // Temporary test to speed up refactoring.
 // Delete after use.
@@ -21,6 +22,7 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::PortsDiff::PortsDiffCommand,
                    vcpkg::Commands::PortHistory::PortHistoryCommand,
                    vcpkg::Commands::Autocomplete::AutocompleteCommand,
+                   vcpkg::Commands::Version::VersionCommand,
                    vcpkg::Commands::X_VSInstances::X_VSInstancesCommand,
                    vcpkg::Commands::Hash::HashCommand,
                    vcpkg::Commands::Fetch::FetchCommand,

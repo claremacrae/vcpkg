@@ -213,6 +213,9 @@ namespace vcpkg::Commands
 
     namespace Version
     {
+        struct VersionCommand : BasicCommand
+        {
+        };
         const char* base_version();
         const std::string& version();
         void warn_if_vcpkg_version_mismatch(const VcpkgPaths& paths);
