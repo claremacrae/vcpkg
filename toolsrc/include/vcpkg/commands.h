@@ -11,6 +11,7 @@
 #include <vcpkg/commands.dependinfo.h>
 #include <vcpkg/commands.edit.h>
 #include <vcpkg/commands.env.h>
+#include <vcpkg/commands.fetch.h>
 #include <vcpkg/commands.format-manifest.h>
 #include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
@@ -41,15 +42,6 @@ namespace vcpkg::Commands
     namespace Hash
     {
         struct HashCommand : PathsCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
-        };
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    }
-
-    namespace Fetch
-    {
-        struct FetchCommand : PathsCommand
         {
             void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
         };
