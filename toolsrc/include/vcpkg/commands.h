@@ -38,12 +38,6 @@ namespace vcpkg::Commands
     using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
 
-    enum class DryRun : bool
-    {
-        No,
-        Yes,
-    };
-
     namespace Create
     {
         struct CreateCommand : PathsCommand
