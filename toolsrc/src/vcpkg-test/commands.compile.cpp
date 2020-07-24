@@ -6,7 +6,9 @@
 // Delete after use.
 TEMPLATE_TEST_CASE("check command structs are constructible",
                    "[commands-compile]",
-                   vcpkg::Commands::BuildExternal::BuildExternalCommand)
+                   vcpkg::Commands::BuildExternal::BuildExternalCommand,
+                   vcpkg::Commands::CI::CICommand,
+                   vcpkg::Commands::Env::EnvCommand)
 {
     TestType c;
 }
