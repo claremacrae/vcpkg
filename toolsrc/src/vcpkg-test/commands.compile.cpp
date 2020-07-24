@@ -22,6 +22,7 @@
 #include <vcpkg/commands.upgrade.h>
 #include <vcpkg/commands.version.h>
 #include <vcpkg/commands.xvsinstances.h>
+#include <vcpkg/export.h>
 #include <vcpkg/help.h>
 #include <vcpkg/install.h>
 #include <vcpkg/update.h>
@@ -52,6 +53,7 @@ TEMPLATE_TEST_CASE("check command structs are constructable",
                    vcpkg::Commands::Hash::HashCommand,
                    vcpkg::Commands::Fetch::FetchCommand,
                    vcpkg::Commands::FormatManifest::FormatManifestCommand,
+                   vcpkg::Export::ExportCommand,
                    vcpkg::Install::InstallCommand,
                    vcpkg::Update::UpdateCommand,
                    vcpkg::Help::HelpCommand)
