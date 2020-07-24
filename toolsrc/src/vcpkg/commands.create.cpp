@@ -17,6 +17,11 @@ namespace vcpkg::Commands::Create
         nullptr,
     };
 
+    void CreateCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Create::perform_and_exit(args, paths);
+    }
+
     int perform(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
