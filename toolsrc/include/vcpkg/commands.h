@@ -21,6 +21,10 @@ namespace vcpkg::Commands
         virtual ~Command() = default;
     };
 
+    struct BasicCommand : Command
+    {
+    };
+
     enum class DryRun : bool
     {
         No,
