@@ -1,6 +1,7 @@
 #include <catch2/catch.hpp>
 
 #include <vcpkg/commands.h>
+#include <vcpkg/help.h>
 #include <vcpkg/update.h>
 
 // Temporary test to speed up refactoring.
@@ -29,7 +30,8 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::Hash::HashCommand,
                    vcpkg::Commands::Fetch::FetchCommand,
                    vcpkg::Commands::FormatManifest::FormatManifestCommand,
-                   vcpkg::Update::UpdateCommand)
+                   vcpkg::Update::UpdateCommand,
+                   vcpkg::Help::HelpCommand)
 {
     TestType c;
 }

@@ -129,4 +129,9 @@ namespace vcpkg::Help
         help_topics(paths);
         Checks::exit_fail(VCPKG_LINE_INFO);
     }
+
+    void HelpCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Help::perform_and_exit(args, paths);
+    }
 }
