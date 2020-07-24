@@ -9,7 +9,8 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::BuildExternal::BuildExternalCommand,
                    vcpkg::Commands::CI::CICommand,
                    vcpkg::Commands::Env::EnvCommand,
-                   vcpkg::Commands::Upgrade::UpgradeCommand)
+                   vcpkg::Commands::Upgrade::UpgradeCommand,
+                   vcpkg::Commands::DependInfo::DependInfoCommand)
 {
     TestType c;
 }
