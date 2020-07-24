@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vcpkg/build.h>
+#include <vcpkg/commands.buildexternal.h>
 #include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
 #include <vcpkg/dependencies.h>
@@ -23,17 +24,6 @@ namespace vcpkg::Commands
         No,
         Yes,
     };
-
-    namespace BuildExternal
-    {
-        struct BuildExternalCommand : TripletCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args,
-                                  const VcpkgPaths& paths,
-                                  Triplet default_triplet) const override;
-        };
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
-    }
 
     namespace CI
     {
