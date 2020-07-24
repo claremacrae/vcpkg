@@ -10,23 +10,14 @@ TEST_CASE ("get_available_commands", "[commands_get_available_commands]")
 {
     using namespace vcpkg;
 
-    // Copied from inner() in toolsrc/src/vcpkg.cpp
-    static const auto find_command = [](auto&& commands, vcpkg::StringView command) {
-        auto it = Util::find_if(
-            commands, [&](auto&& commandc) { return Strings::case_insensitive_ascii_equals(commandc.name, command); });
-        using std::end;
-        if (it != end(commands))
-        {
-            return &*it;
-        }
-        else
-        {
-            return static_cast<decltype(&*it)>(nullptr);
-        }
+    static const auto find_command = [](auto&& commands, const std::string& command) {
+        return Commands::find(command, commands);
     };
 
     {
-        const auto& commands = Commands::get_available_commands_type_b();
+        const auto& span = Commands::get_available_commands_type_b();
+        using ContainerType = std::vector<Commands::PackageNameAndFunction<std::shared_ptr<Commands::PathsCommand>>>;
+        const ContainerType commands(span.begin(), span.end());
         CHECK(find_command(commands, "/?") != nullptr);
         CHECK(find_command(commands, "help") != nullptr);
         CHECK(find_command(commands, "search") != nullptr);
@@ -49,7 +40,9 @@ TEST_CASE ("get_available_commands", "[commands_get_available_commands]")
     }
 
     {
-        const auto& commands = Commands::get_available_commands_type_c();
+        const auto& span = Commands::get_available_commands_type_c();
+        using ContainerType = std::vector<Commands::PackageNameAndFunction<std::shared_ptr<Commands::BasicCommand>>>;
+        const ContainerType commands(span.begin(), span.end());
         CHECK(find_command(commands, "version") != nullptr);
         CHECK(find_command(commands, "contact") != nullptr);
         CHECK(find_command(commands, "wibble") == nullptr);
