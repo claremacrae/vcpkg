@@ -81,6 +81,11 @@ namespace vcpkg::Commands::PortHistory
         nullptr,
     };
 
+    void PortHistoryCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        PortHistory::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
