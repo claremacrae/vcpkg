@@ -41,6 +41,9 @@ namespace vcpkg::Commands
 
     namespace BuildExternal
     {
+        struct BuildExternalCommand : TripletCommand
+        {
+        };
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     }
 
