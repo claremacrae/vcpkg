@@ -264,6 +264,9 @@ paket-files/
 .idea/
 *.sln.iml
 
+# JetBrains CLion
+cmake-build-*
+
 # CodeRush
 .cr/
 
