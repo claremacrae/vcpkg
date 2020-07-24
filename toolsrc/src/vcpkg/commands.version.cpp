@@ -46,11 +46,6 @@ namespace vcpkg::Commands::Version
 #endif
     }
 
-    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
-    {
-        Version::perform_and_exit(args, fs);
-    }
-
     void warn_if_vcpkg_version_mismatch(const VcpkgPaths& paths)
     {
         auto version_file = paths.get_filesystem().read_contents(paths.root / "toolsrc" / "VERSION.txt");
@@ -97,5 +92,10 @@ namespace vcpkg::Commands::Version
                        "\n"
                        "See LICENSE.txt for license information.\n");
         Checks::exit_success(VCPKG_LINE_INFO);
+    }
+
+    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
+    {
+        Version::perform_and_exit(args, fs);
     }
 }
