@@ -27,6 +27,7 @@ namespace vcpkg::Commands
 
     struct PathsCommand : Command
     {
+        virtual void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const = 0;
     };
 
     struct TripletCommand : Command
@@ -69,6 +70,7 @@ namespace vcpkg::Commands
     {
         struct CICleanCommand : PathsCommand
         {
+            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
         };
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     }

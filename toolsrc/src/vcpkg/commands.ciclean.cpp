@@ -28,6 +28,11 @@ namespace
 
 namespace vcpkg::Commands::CIClean
 {
+    void CICleanCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        CIClean::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments&, const VcpkgPaths& paths)
     {
         using vcpkg::System::print2;
