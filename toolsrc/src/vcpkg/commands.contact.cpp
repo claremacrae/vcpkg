@@ -10,11 +10,6 @@
 
 namespace vcpkg::Commands::Contact
 {
-    void ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
-    {
-        Contact::perform_and_exit(args, fs);
-    }
-
     const std::string& email()
     {
         static const std::string S_EMAIL = R"(vcpkg@microsoft.com)";
@@ -62,5 +57,10 @@ namespace vcpkg::Commands::Contact
             System::print2("Send an email to ", email(), " with any feedback.\n");
         }
         Checks::exit_success(VCPKG_LINE_INFO);
+    }
+
+    void ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
+    {
+        Contact::perform_and_exit(args, fs);
     }
 }
