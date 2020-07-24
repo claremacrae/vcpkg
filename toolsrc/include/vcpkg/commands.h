@@ -23,6 +23,7 @@ namespace vcpkg::Commands
 
     struct BasicCommand : Command
     {
+        virtual void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const = 0;
     };
 
     struct PathsCommand : Command
@@ -215,6 +216,7 @@ namespace vcpkg::Commands
     {
         struct VersionCommand : BasicCommand
         {
+            void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const override;
         };
         const char* base_version();
         const std::string& version();

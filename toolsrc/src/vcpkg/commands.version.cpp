@@ -46,6 +46,11 @@ namespace vcpkg::Commands::Version
 #endif
     }
 
+    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
+    {
+        Version::perform_and_exit(args, fs);
+    }
+
     void warn_if_vcpkg_version_mismatch(const VcpkgPaths& paths)
     {
         auto version_file = paths.get_filesystem().read_contents(paths.root / "toolsrc" / "VERSION.txt");
