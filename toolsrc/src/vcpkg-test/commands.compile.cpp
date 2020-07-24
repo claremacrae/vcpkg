@@ -21,6 +21,7 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::PortsDiff::PortsDiffCommand,
                    vcpkg::Commands::PortHistory::PortHistoryCommand,
                    vcpkg::Commands::Autocomplete::AutocompleteCommand,
+                   vcpkg::Commands::X_VSInstances::X_VSInstancesCommand,
                    vcpkg::Commands::SetInstalled::SetInstalledCommand)
 {
     TestType c;

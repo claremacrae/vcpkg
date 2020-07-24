@@ -16,6 +16,11 @@ namespace vcpkg::Commands::X_VSInstances
         nullptr,
     };
 
+    void X_VSInstancesCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        X_VSInstances::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
 #if defined(_WIN32)

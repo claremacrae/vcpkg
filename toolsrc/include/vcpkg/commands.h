@@ -228,6 +228,10 @@ namespace vcpkg::Commands
 
     namespace X_VSInstances
     {
+        struct X_VSInstancesCommand : PathsCommand
+        {
+            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
+        };
         extern const CommandStructure COMMAND_STRUCTURE;
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     }
