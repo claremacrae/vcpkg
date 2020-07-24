@@ -4,7 +4,6 @@
 #include <vcpkg/build.h>
 #include <vcpkg/cmakevars.h>
 #include <vcpkg/commands.buildexternal.h>
-#include <vcpkg/commands.h>
 #include <vcpkg/help.h>
 #include <vcpkg/input.h>
 
