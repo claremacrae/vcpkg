@@ -90,6 +90,11 @@ namespace vcpkg::Commands::List
         nullptr,
     };
 
+    void ListCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        List::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         const ParsedArguments options = args.parse_arguments(COMMAND_STRUCTURE);
