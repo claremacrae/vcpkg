@@ -984,4 +984,11 @@ namespace vcpkg::Install
         }
         return xunit_doc;
     }
+
+    void InstallCommand::perform_and_exit(const VcpkgCmdArguments& args,
+                                          const VcpkgPaths& paths,
+                                          Triplet default_triplet) const
+    {
+        Install::perform_and_exit(args, paths, default_triplet);
+    }
 }
