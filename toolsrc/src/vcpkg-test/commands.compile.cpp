@@ -4,9 +4,9 @@
 
 // Temporary test to speed up refactoring.
 // Delete after use.
-TEST_CASE ("check command structs are constructible", "[commands-compile]")
+TEMPLATE_TEST_CASE("check command structs are constructible",
+                   "[commands-compile]",
+                   vcpkg::Commands::BuildExternal::BuildExternalCommand)
 {
-    using namespace vcpkg;
-
-    Commands::BuildExternal::BuildExternalCommand c;
+    TestType c;
 }
