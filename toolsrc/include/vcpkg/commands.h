@@ -31,6 +31,9 @@ namespace vcpkg::Commands
 
     struct TripletCommand : Command
     {
+        virtual void perform_and_exit(const VcpkgCmdArguments& args,
+                                      const VcpkgPaths& paths,
+                                      Triplet default_triplet) const = 0;
     };
 
     enum class DryRun : bool
@@ -43,6 +46,8 @@ namespace vcpkg::Commands
     {
         struct BuildExternalCommand : TripletCommand
         {
+            void perform_and_exit(const VcpkgCmdArguments &args, const VcpkgPaths &paths,
+                                  Triplet default_triplet) const override;
         };
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     }
