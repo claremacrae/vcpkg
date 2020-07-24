@@ -32,6 +32,13 @@ namespace vcpkg::Commands::Env
         nullptr,
     };
 
+    void EnvCommand::perform_and_exit(const VcpkgCmdArguments& args,
+                                      const VcpkgPaths& paths,
+                                      Triplet default_triplet) const
+    {
+        Env::perform_and_exit(args, paths, default_triplet);
+    }
+
     // This command should probably optionally take a port
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet triplet)
     {
