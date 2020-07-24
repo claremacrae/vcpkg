@@ -74,6 +74,11 @@ namespace vcpkg::Commands::Search
         nullptr,
     };
 
+    void SearchCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Search::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         const ParsedArguments options = args.parse_arguments(COMMAND_STRUCTURE);
