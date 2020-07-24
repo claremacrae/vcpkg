@@ -34,6 +34,13 @@ namespace vcpkg::Commands::SetInstalled
         nullptr,
     };
 
+    void SetInstalledCommand::perform_and_exit(const VcpkgCmdArguments& args,
+                                               const VcpkgPaths& paths,
+                                               Triplet default_triplet) const
+    {
+        SetInstalled::perform_and_exit(args, paths, default_triplet);
+    }
+
     void perform_and_exit_ex(const VcpkgCmdArguments& args,
                              const VcpkgPaths& paths,
                              const PortFileProvider::PathsPortFileProvider& provider,
