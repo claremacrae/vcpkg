@@ -10,7 +10,7 @@
 
 namespace vcpkg::Commands::Contact
 {
-    void Contact::ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
+    void ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
     {
         Contact::perform_and_exit(args, fs);
     }
