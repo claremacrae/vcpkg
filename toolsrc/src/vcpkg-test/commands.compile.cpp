@@ -23,6 +23,7 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::Autocomplete::AutocompleteCommand,
                    vcpkg::Commands::X_VSInstances::X_VSInstancesCommand,
                    vcpkg::Commands::Hash::HashCommand,
+                   vcpkg::Commands::Fetch::FetchCommand,
                    vcpkg::Commands::SetInstalled::SetInstalledCommand)
 {
     TestType c;
