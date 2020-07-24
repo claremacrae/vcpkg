@@ -2,6 +2,9 @@
 
 #include <vcpkg/commands.interfaces.h>
 
+#include "cmakevars.h"
+#include "portfileprovider.h"
+
 namespace vcpkg::Commands
 {
     namespace SetInstalled

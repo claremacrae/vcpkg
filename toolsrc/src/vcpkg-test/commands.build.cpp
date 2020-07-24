@@ -2,7 +2,8 @@
 
 #include <vcpkg/base/files.h>
 
-#include <vcpkg/commands.h>
+#include <vcpkg/build.h>
+#include <vcpkg/commands.buildexternal.h>
 #include <vcpkg/vcpkgcmdarguments.h>
 #include <vcpkg/vcpkgpaths.h>
 
