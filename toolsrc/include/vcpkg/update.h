@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vcpkg/commands.h>
 #include <vcpkg/dependencies.h>
 #include <vcpkg/packagespec.h>
 #include <vcpkg/statusparagraphs.h>
@@ -21,4 +22,9 @@ namespace vcpkg::Update
                                                         const StatusParagraphs& status_db);
 
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
+
+    struct UpdateCommand : Commands::PathsCommand
+    {
+        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
+    };
 }
