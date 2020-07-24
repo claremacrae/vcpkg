@@ -16,6 +16,11 @@ namespace vcpkg::Commands
     using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
 
+    struct Command
+    {
+        virtual ~Command() = default;
+    };
+
     enum class DryRun : bool
     {
         No,
