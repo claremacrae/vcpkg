@@ -27,6 +27,11 @@ namespace vcpkg::Commands::Autocomplete
                           [&](const std::string& triplet) { return Strings::format("%s:%s", port, triplet); });
     }
 
+    void AutocompleteCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Autocomplete::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Metrics::g_metrics.lock()->set_send_metrics(false);
