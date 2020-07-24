@@ -6,7 +6,7 @@
 
 // Temporary test to speed up refactoring.
 // Delete after use.
-TEMPLATE_TEST_CASE("check command structs are constructible",
+TEMPLATE_TEST_CASE("check command structs are constructable",
                    "[commands-compile]",
                    vcpkg::Commands::BuildExternal::BuildExternalCommand,
                    vcpkg::Commands::CI::CICommand,
