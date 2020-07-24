@@ -22,6 +22,11 @@ namespace vcpkg::Commands::FormatManifest
         nullptr,
     };
 
+    void FormatManifestCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        FormatManifest::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         auto parsed_args = args.parse_arguments(COMMAND_STRUCTURE);
