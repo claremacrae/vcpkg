@@ -308,7 +308,7 @@ namespace vcpkg::Commands
 
     Span<const PackageNameAndFunction<CommandTypeA>> get_available_commands_type_a();
     Span<const PackageNameAndFunction<CommandTypeB>> get_available_commands_type_b();
-    Span<const PackageNameAndFunction<CommandTypeC>> get_available_commands_type_c();
+    Span<const PackageNameAndFunction<std::shared_ptr<BasicCommand>>> get_available_commands_type_c();
 
     template<typename T>
     T find(const std::string& command_name, const std::vector<PackageNameAndFunction<T>> available_commands)
