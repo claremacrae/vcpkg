@@ -12,6 +12,7 @@ TEMPLATE_TEST_CASE("check command structs are constructible",
                    vcpkg::Commands::Env::EnvCommand,
                    vcpkg::Commands::Create::CreateCommand,
                    vcpkg::Commands::Upgrade::UpgradeCommand,
+                   vcpkg::Commands::Edit::EditCommand,
                    vcpkg::Commands::DependInfo::DependInfoCommand,
                    vcpkg::Commands::SetInstalled::SetInstalledCommand)
 {
