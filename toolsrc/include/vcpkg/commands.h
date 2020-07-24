@@ -29,6 +29,10 @@ namespace vcpkg::Commands
     {
     };
 
+    struct TripletCommand : Command
+    {
+    };
+
     enum class DryRun : bool
     {
         No,
