@@ -32,6 +32,11 @@ namespace vcpkg::Commands::Owns
         nullptr,
     };
 
+    void OwnsCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        Owns::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
