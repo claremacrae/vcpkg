@@ -82,7 +82,7 @@ namespace vcpkg::Commands::Version
         nullptr,
     };
 
-    void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem&)
+    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
 
@@ -92,10 +92,5 @@ namespace vcpkg::Commands::Version
                        "\n"
                        "See LICENSE.txt for license information.\n");
         Checks::exit_success(VCPKG_LINE_INFO);
-    }
-
-    void VersionCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
-    {
-        Version::perform_and_exit(args, fs);
     }
 }
