@@ -131,6 +131,11 @@ namespace vcpkg::Commands::PortsDiff
         nullptr,
     };
 
+    void PortsDiffCommand::perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const
+    {
+        PortsDiff::perform_and_exit(args, paths);
+    }
+
     void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths)
     {
         Util::unused(args.parse_arguments(COMMAND_STRUCTURE));
