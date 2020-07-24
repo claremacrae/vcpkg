@@ -67,6 +67,9 @@ namespace vcpkg::Commands
 
     namespace CIClean
     {
+        struct CICleanCommand : PathsCommand
+        {
+        };
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     }
 
