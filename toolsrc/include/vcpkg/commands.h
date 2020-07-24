@@ -13,6 +13,7 @@
 #include <vcpkg/commands.env.h>
 #include <vcpkg/commands.fetch.h>
 #include <vcpkg/commands.format-manifest.h>
+#include <vcpkg/commands.hash.h>
 #include <vcpkg/commands.integrate.h>
 #include <vcpkg/commands.interfaces.h>
 #include <vcpkg/commands.list.h>
@@ -38,15 +39,6 @@ namespace vcpkg::Commands
     using CommandTypeA = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
-
-    namespace Hash
-    {
-        struct HashCommand : PathsCommand
-        {
-            void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths) const override;
-        };
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    }
 
     template<class T>
     struct PackageNameAndFunction
