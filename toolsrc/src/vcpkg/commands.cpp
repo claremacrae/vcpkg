@@ -30,27 +30,27 @@ namespace vcpkg::Commands
         return t;
     }
 
-    Span<const PackageNameAndFunction<CommandTypeB>> get_available_commands_type_b()
+    Span<const PackageNameAndFunction<std::shared_ptr<PathsCommand>>> get_available_commands_type_b()
     {
-        static std::vector<PackageNameAndFunction<CommandTypeB>> t = {
-            {"/?", &Help::perform_and_exit},
-            {"help", &Help::perform_and_exit},
-            {"search", &Search::perform_and_exit},
-            {"list", &List::perform_and_exit},
-            {"integrate", &Integrate::perform_and_exit},
-            {"owns", &Owns::perform_and_exit},
-            {"update", &Update::perform_and_exit},
-            {"edit", &Edit::perform_and_exit},
-            {"create", &Create::perform_and_exit},
-            {"cache", &Cache::perform_and_exit},
-            {"portsdiff", &PortsDiff::perform_and_exit},
-            {"autocomplete", &Autocomplete::perform_and_exit},
-            {"hash", &Hash::perform_and_exit},
-            {"fetch", &Fetch::perform_and_exit},
-            {"x-ci-clean", &CIClean::perform_and_exit},
-            {"x-history", &PortHistory::perform_and_exit},
-            {"x-vsinstances", &X_VSInstances::perform_and_exit},
-            {"x-format-manifest", &FormatManifest::perform_and_exit},
+        static std::vector<PackageNameAndFunction<std::shared_ptr<PathsCommand>>> t = {
+            {"/?", std::make_shared<Help::HelpCommand>()},
+            {"help", std::make_shared<Help::HelpCommand>()},
+            {"search", std::make_shared<Search::SearchCommand>()},
+            {"list", std::make_shared<List::ListCommand>()},
+            {"integrate", std::make_shared<Integrate::IntegrateCommand>()},
+            {"owns", std::make_shared<Owns::OwnsCommand>()},
+            {"update", std::make_shared<Update::UpdateCommand>()},
+            {"edit", std::make_shared<Edit::EditCommand>()},
+            {"create", std::make_shared<Create::CreateCommand>()},
+            {"cache", std::make_shared<Cache::CacheCommand>()},
+            {"portsdiff", std::make_shared<PortsDiff::PortsDiffCommand>()},
+            {"autocomplete", std::make_shared<Autocomplete::AutocompleteCommand>()},
+            {"hash", std::make_shared<Hash::HashCommand>()},
+            {"fetch", std::make_shared<Fetch::FetchCommand>()},
+            {"x-ci-clean", std::make_shared<CIClean::CICleanCommand>()},
+            {"x-history", std::make_shared<PortHistory::PortHistoryCommand>()},
+            {"x-vsinstances", std::make_shared<X_VSInstances::X_VSInstancesCommand>()},
+            {"x-format-manifest", std::make_shared<FormatManifest::FormatManifestCommand>()},
         };
         return t;
     }
