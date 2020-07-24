@@ -30,7 +30,7 @@ namespace vcpkg::Commands::Contact
         nullptr,
     };
 
-    void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs)
+    void ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
     {
         const ParsedArguments parsed_args = args.parse_arguments(COMMAND_STRUCTURE);
 
@@ -57,10 +57,5 @@ namespace vcpkg::Commands::Contact
             System::print2("Send an email to ", email(), " with any feedback.\n");
         }
         Checks::exit_success(VCPKG_LINE_INFO);
-    }
-
-    void ContactCommand::perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const
-    {
-        Contact::perform_and_exit(args, fs);
     }
 }
