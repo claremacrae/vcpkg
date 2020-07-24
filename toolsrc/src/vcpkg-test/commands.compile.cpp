@@ -1,5 +1,6 @@
 #include <catch2/catch.hpp>
 
+#include <vcpkg/build.h>
 #include <vcpkg/commands.autocomplete.h>
 #include <vcpkg/commands.buildexternal.h>
 #include <vcpkg/commands.cache.h>
@@ -32,6 +33,7 @@
 // Delete after use.
 TEMPLATE_TEST_CASE("check command structs are constructable",
                    "[commands-compile]",
+                   vcpkg::Build::Command::BuildCommand,
                    vcpkg::Commands::BuildExternal::BuildExternalCommand,
                    vcpkg::Commands::CI::CICommand,
                    vcpkg::Commands::CIClean::CICleanCommand,

@@ -6,6 +6,7 @@
 #include <vcpkg/base/system.process.h>
 
 #include <vcpkg/cmakevars.h>
+#include <vcpkg/commands.interfaces.h>
 #include <vcpkg/packagespec.h>
 #include <vcpkg/statusparagraphs.h>
 #include <vcpkg/triplet.h>
@@ -73,6 +74,13 @@ namespace vcpkg::Build
 
         int perform(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
+
+        struct BuildCommand : Commands::TripletCommand
+        {
+            void perform_and_exit(const VcpkgCmdArguments& args,
+                                  const VcpkgPaths& paths,
+                                  Triplet default_triplet) const override;
+        };
     }
 
     enum class UseHeadVersion
