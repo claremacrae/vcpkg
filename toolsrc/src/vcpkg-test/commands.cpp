@@ -7,5 +7,5 @@ using namespace vcpkg;
 TEST_CASE ("check all commands are constructable", "[commands]")
 {
     using namespace Commands;
-    VersionCommand v;
+    Version::VersionCommand v;
 }
