@@ -10,7 +10,7 @@ namespace vcpkg::Commands
         const std::string& email();
         void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs);
 
-        class ContactCommand : BasicCommand
+        struct ContactCommand : BasicCommand
         {
             void perform_and_exit(const VcpkgCmdArguments& args, Files::Filesystem& fs) const override;
         };
