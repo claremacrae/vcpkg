@@ -81,8 +81,8 @@ namespace vcpkg::Commands
     Span<const PackageNameAndFunction<CommandTypeC>> get_available_commands_type_c()
     {
         static std::vector<PackageNameAndFunction<CommandTypeC>> t = {
-            {"version", &Version::perform_and_exit},
-            {"contact", &Contact::perform_and_exit},
+            {"version", std::make_shared<Version::VersionCommand>()},
+            {"contact", std::make_shared<Contact::ContactCommand>()},
         };
         return t;
     }
