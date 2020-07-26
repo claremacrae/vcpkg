@@ -10,4 +10,13 @@ namespace vcpkg::Commands
         No,
         Yes,
     };
+
+    struct Command
+    {
+        virtual ~Command() = default;
+    };
+
+    struct BasicCommand : Command
+    {
+    };
 }
