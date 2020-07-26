@@ -11,6 +11,7 @@
 #include <vcpkg/commands.dependinfo.h>
 #include <vcpkg/commands.edit.h>
 #include <vcpkg/commands.env.h>
+#include <vcpkg/commands.fetch.h>
 #include <vcpkg/commands.format-manifest.h>
 #include <vcpkg/commands.hash.h>
 #include <vcpkg/commands.integrate.h>
@@ -38,11 +39,6 @@ namespace vcpkg::Commands
     using CommandTypeA = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
-
-    namespace Fetch
-    {
-        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
-    }
 
     template<class T>
     struct PackageNameAndFunction
