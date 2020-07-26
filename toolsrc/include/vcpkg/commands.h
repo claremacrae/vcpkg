@@ -13,6 +13,7 @@
 #include <vcpkg/commands.env.h>
 #include <vcpkg/commands.format-manifest.h>
 #include <vcpkg/commands.integrate.h>
+#include <vcpkg/commands.interfaces.h>
 #include <vcpkg/commands.list.h>
 #include <vcpkg/commands.owns.h>
 #include <vcpkg/commands.porthistory.h>
@@ -36,12 +37,6 @@ namespace vcpkg::Commands
     using CommandTypeA = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths, Triplet default_triplet);
     using CommandTypeB = void (*)(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     using CommandTypeC = void (*)(const VcpkgCmdArguments& args, Files::Filesystem& fs);
-
-    enum class DryRun : bool
-    {
-        No,
-        Yes,
-    };
 
     namespace BuildExternal
     {
