@@ -1,6 +1,8 @@
 #pragma once
 
+#include <vcpkg/cmakevars.h>
 #include <vcpkg/commands.interfaces.h>
+#include <vcpkg/portfileprovider.h>
 
 namespace vcpkg::Commands
 {

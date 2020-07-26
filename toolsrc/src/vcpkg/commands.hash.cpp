@@ -4,7 +4,7 @@
 #include <vcpkg/base/system.print.h>
 
 #include <vcpkg/build.h>
-#include <vcpkg/commands.h>
+#include <vcpkg/commands.hash.h>
 #include <vcpkg/export.h>
 
 namespace vcpkg::Commands::Hash
